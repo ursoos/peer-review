@@ -32,7 +32,8 @@
 	  	 		<td>password:</td><td><g:passwordField name="password"/></td><td class="error">${passwordMessage}</td>
 	  	 	</tr>
 	  		<tr>
-	  			<td colspan="2">
+	  			<td></td>
+	  			<td>
 	  				<g:actionSubmit value="Sign in" action="login"/>
   				</td>
 	  		</tr>

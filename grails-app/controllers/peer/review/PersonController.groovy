@@ -119,8 +119,15 @@ class PersonController {
 				render(view: "login", model: [passwordMessage: "Password incorrect"])
 			}
 		}
+		
 		else {
 			render(view: "login", model: [userMessage: "User not found"])
 		}
 	}
+	def logout() {
+		log.info "User agent: " + request.getHeader("User-Agent")
+		session.invalidate()
+		redirect(conrtoller: "person", action: "login")
+	}
+
 }
