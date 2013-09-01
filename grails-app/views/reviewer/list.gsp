@@ -30,6 +30,10 @@
 					
 						<g:sortableColumn property="lastName" title="${message(code: 'reviewer.lastName.label', default: 'Last Name')}" />
 					
+						<g:sortableColumn property="login" title="${message(code: 'reviewer.login.label', default: 'Login')}" />
+					
+						<g:sortableColumn property="password" title="${message(code: 'reviewer.password.label', default: 'Password')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +45,10 @@
 						<td>${fieldValue(bean: reviewerInstance, field: "initials")}</td>
 					
 						<td>${fieldValue(bean: reviewerInstance, field: "lastName")}</td>
+					
+						<td>${fieldValue(bean: reviewerInstance, field: "login")}</td>
+					
+						<td>${fieldValue(bean: reviewerInstance, field: "password")}</td>
 					
 					</tr>
 				</g:each>

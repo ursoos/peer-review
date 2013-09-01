@@ -6,8 +6,8 @@ class UrlMappings {
 				// apply constraints here
 			}
 		}
-
-		"/"(view:"/index")
+//		"/index.gsp"(view:'/index')
+		"/"(view:'/index')
 		"500"(view:'/error')
 	}
 }

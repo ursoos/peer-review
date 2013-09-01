@@ -43,3 +43,19 @@
 	<g:textField name="lastName" value="${reviewerInstance?.lastName}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: reviewerInstance, field: 'login', 'error')} ">
+	<label for="login">
+		<g:message code="reviewer.login.label" default="Login" />
+		
+	</label>
+	<g:textField name="login" value="${reviewerInstance?.login}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: reviewerInstance, field: 'password', 'error')} ">
+	<label for="password">
+		<g:message code="reviewer.password.label" default="Password" />
+		
+	</label>
+	<g:textField name="password" value="${reviewerInstance?.password}"/>
+</div>
+

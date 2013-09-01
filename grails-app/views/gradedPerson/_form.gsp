@@ -43,3 +43,19 @@
 	<g:textField name="lastName" value="${gradedPersonInstance?.lastName}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: gradedPersonInstance, field: 'login', 'error')} ">
+	<label for="login">
+		<g:message code="gradedPerson.login.label" default="Login" />
+		
+	</label>
+	<g:textField name="login" value="${gradedPersonInstance?.login}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: gradedPersonInstance, field: 'password', 'error')} ">
+	<label for="password">
+		<g:message code="gradedPerson.password.label" default="Password" />
+		
+	</label>
+	<g:textField name="password" value="${gradedPersonInstance?.password}"/>
+</div>
+

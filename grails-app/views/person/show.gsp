@@ -50,6 +50,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${personInstance?.login}">
+				<li class="fieldcontain">
+					<span id="login-label" class="property-label"><g:message code="person.login.label" default="Login" /></span>
+					
+						<span class="property-value" aria-labelledby="login-label"><g:fieldValue bean="${personInstance}" field="login"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${personInstance?.password}">
+				<li class="fieldcontain">
+					<span id="password-label" class="property-label"><g:message code="person.password.label" default="Password" /></span>
+					
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${personInstance}" field="password"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

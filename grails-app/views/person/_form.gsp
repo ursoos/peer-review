@@ -26,3 +26,19 @@
 	<g:textField name="lastName" value="${personInstance?.lastName}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: personInstance, field: 'login', 'error')} ">
+	<label for="login">
+		<g:message code="person.login.label" default="Login" />
+		
+	</label>
+	<g:textField name="login" value="${personInstance?.login}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: personInstance, field: 'password', 'error')} ">
+	<label for="password">
+		<g:message code="person.password.label" default="Password" />
+		
+	</label>
+	<g:textField name="password" value="${personInstance?.password}"/>
+</div>
+

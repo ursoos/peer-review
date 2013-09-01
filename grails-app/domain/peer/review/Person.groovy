@@ -8,5 +8,7 @@ class Person {
 	String firstName
 	String lastName
 	String initials
+	String login
+	String password
 	
 	}

@@ -99,4 +99,25 @@ class PersonController {
             redirect(action: "show", id: id)
         }
     }
+	def login() {
+		if (request.get) {
+			return // render the login view
+		}
+		
+		def u = Person.findByLogin(params.login)
+		println "login is $params.login"
+		println "user from DB is $u.firstName $u.lastName"
+		if (u) {
+			if (u.password == params.password) {
+				session.user = u
+				redirect(action: "../")
+			}
+			else {
+				render(view: "login", model: [message: "Password incorrect"])
+			}
+		}
+		else {
+			render(view: "login", model: [message: "User not found"])
+		}
+	}
 }

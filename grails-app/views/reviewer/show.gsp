@@ -32,10 +32,6 @@
 						</g:each>
 					
 				</li>
-				<g:link class="edit" action="edit" id="${reviewerInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-				
-				
-				Show all reviews with details: 
 				</g:if>
 			
 				<g:if test="${reviewerInstance?.firstName}">
@@ -61,6 +57,24 @@
 					<span id="lastName-label" class="property-label"><g:message code="reviewer.lastName.label" default="Last Name" /></span>
 					
 						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${reviewerInstance}" field="lastName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${reviewerInstance?.login}">
+				<li class="fieldcontain">
+					<span id="login-label" class="property-label"><g:message code="reviewer.login.label" default="Login" /></span>
+					
+						<span class="property-value" aria-labelledby="login-label"><g:fieldValue bean="${reviewerInstance}" field="login"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${reviewerInstance?.password}">
+				<li class="fieldcontain">
+					<span id="password-label" class="property-label"><g:message code="reviewer.password.label" default="Password" /></span>
+					
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${reviewerInstance}" field="password"/></span>
 					
 				</li>
 				</g:if>
