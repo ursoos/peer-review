@@ -3,15 +3,12 @@ import peer.review.*
 class BootStrap {
 
 	def init = { servletContext ->
-//		def ArrayList people = Person.list()
 
 		println ("Populating test data")
 		//People to be graded
 	
 		
 		def luke = new GradedPerson(firstName: "Luke", lastName: "Skywalker", initials: "LS", login: "luke", password: "luke" )
-		luke.setLogin("luke")
-		luke.setPassword("luke")
 		luke.save()
 		
 		
@@ -22,8 +19,6 @@ class BootStrap {
 		def wedge =  new GradedPerson(firstName: "Wedge", lastName: "Antilles", initials: "WA", login: "xwing" ,password: "rebel" )
 		wedge.save()
 		
-		println ("$luke.firstName $luke.lastName $luke.initials $luke.login $luke.password")
-		println ("$han.firstName $han.lastName $han.initials $han.login $han.password")
 		//graders
 		def vader = new Reviewer (firstName: "Darth", lastName: "Vader", initials: "DV", login : "lord", password :"padme" )
 		vader.save()
@@ -37,8 +32,7 @@ class BootStrap {
 		def lightsaber = new Question (question:   "What are his lightsaber skills?", link : "starwars.com",
 		description : "He/she needs to be at least able to use lightsaber in combat and deflect incoming projectiles" )
 		lightsaber.save()
-		println ("$luke.firstName $luke.lastName $luke.initials $luke.login $luke.password")
-		println ("$han.firstName $han.lastName $han.initials $han.login $han.password")
+		
 	}
 	def destroy = {
 	}
