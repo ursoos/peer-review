@@ -6,12 +6,8 @@ class BootStrap {
 
 		println ("Populating test data")
 		//People to be graded
-	
-		
 		def luke = new GradedPerson(firstName: "Luke", lastName: "Skywalker", initials: "LS", login: "luke", password: "luke" )
 		luke.save()
-		
-		
 		def han =  new GradedPerson(firstName: "Han", lastName: "Solo", initials: "HS", login: "han", password: "solo" )
 		han.save()
 		def bobba =  new GradedPerson(firstName: "Bobba", lastName: "Fett", initials: "BF" , login: "bff", password: "yay")
