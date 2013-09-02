@@ -108,8 +108,10 @@ class PersonController {
 		if (u) {
 			if (u.password == params.password) {
 				session.user = u
+				//flow for reviewers
 				if (u instanceof Reviewer) {
-					redirect(controller: "review", action: "list" )
+					redirect(controller: "review", action: "listForReviewer", params:  [id : u.id]  )
+				//	flow for Graders
 				} else {
 					redirect(controller: "question", action: "list")
 				}
