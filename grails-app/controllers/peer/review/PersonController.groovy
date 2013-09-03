@@ -108,13 +108,7 @@ class PersonController {
 		if (u) {
 			if (u.password == params.password) {
 				session.user = u
-				//flow for reviewers
-				if (u instanceof Reviewer) {
-					redirect(controller: "review", action: "listForReviewer", params:  [id : u.id]  )
-				//	flow for Graders
-				} else {
-					redirect(controller: "question", action: "list")
-				}
+				loginPerson(u)
 				
 			}
 			else {
@@ -125,6 +119,14 @@ class PersonController {
 		else {
 			render(view: "login", model: [userMessage: "User not found"])
 		}
+	}
+	
+	private loginPerson(Reviewer u) {
+		redirect(controller: "question", action: "list")
+	}
+
+	private loginPerson(GradedPerson u) {
+		redirect(controller: "review", action: "listForReviewer", params:  [id : u.id]  )
 	}
 	def logout() {
 		log.info "User agent: " + request.getHeader("User-Agent")
