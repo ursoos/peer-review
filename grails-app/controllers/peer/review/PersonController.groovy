@@ -122,11 +122,11 @@ class PersonController {
 	}
 	
 	private loginPerson(Reviewer u) {
-		redirect(controller: "question", action: "list")
+		redirect(controller: "review", action: "listForReviewer", params:  [id : u.id]  )
 	}
 
 	private loginPerson(GradedPerson u) {
-		redirect(controller: "review", action: "listForReviewer", params:  [id : u.id]  )
+		redirect(controller: "review", action: "listReviewsOfPerson", params:  [id : u.id]  )
 	}
 	def logout() {
 		log.info "User agent: " + request.getHeader("User-Agent")

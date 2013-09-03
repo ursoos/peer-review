@@ -14,12 +14,22 @@ class ReviewController {
         params.max = Math.min(max ?: 10, 100)
         [reviewInstanceList: Review.list(params), reviewInstanceTotal: Review.count()]
     }
-	def listForReviewer(Integer max, Integer id) {
-		params.max = Math.min(max ?: 10, 100)
+	/**
+	 * Provided list of reviews performed by specific reviewer
+	 * @param id reviewer id
+	 * @return
+	 */
+	def listForReviewer(Integer id) {
 		List reviews = Review.findAllByCreatorOfReview(Reviewer.get(id))
 		
 		[reviewInstanceList: reviews, reviewInstanceTotal: reviews.size]
 	}
+	def listReviewsOfPerson(Integer id) {
+		
+		List reviews = Review.findAllByPersonToReview(GradedPerson.get(id))
+
+		[reviewInstanceList: reviews, reviewInstanceTotal: reviews.size]
+}
 
     def create() {
         [reviewInstance: new Review(params)]
