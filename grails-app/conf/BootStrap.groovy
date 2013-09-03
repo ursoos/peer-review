@@ -29,6 +29,11 @@ class BootStrap {
 		description : "He/she needs to be at least able to use lightsaber in combat and deflect incoming projectiles" )
 		lightsaber.save()
 		
+		
+		//coupe reviews
+		def review = new Review (creatorOfReview: yoda, whenCreated: new Date(), finished: true, personToReview: wedge )
+		review.save()
+		
 	}
 	def destroy = {
 	}
